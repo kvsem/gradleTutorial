@@ -1,0 +1,11 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
+    datasource:
+        url: "jdbc:mysql://ec2-13-124-187-152.ap-northeast-2.compute.amazonaws.com:3306/K_PROJECT?useUnicode=true&characterEncoding=utf8"
+        username: "root"
+        password: "gks4512"
+        driver-class-name: com.mysql.cj.jdbc.Driver
