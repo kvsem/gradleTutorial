@@ -10,4 +10,4 @@ spring:
         password: "gks4512"
         driver-class-name: com.mysql.cj.jdbc.Driver
 server:
-    port: 63322
+    port: 8090
