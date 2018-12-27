@@ -1,7 +1,7 @@
 package com.gradletutorial.webservice.web;
 
-import com.gradletutorial.webservice.domain.posts.PostsRepository;
-import com.gradletutorial.webservice.dto.PostsSaveRequestDto;
+import com.gradletutorial.webservice.domain.post.PostRepository;
+import com.gradletutorial.webservice.dto.PostSaveRequestDto;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class WebRestController {
 
-    private PostsRepository postsRepository;
+    private PostRepository postRepository;
 
     @GetMapping("/hello")
     public String hello() {
@@ -20,7 +20,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto) {
-        postsRepository.save(dto.toEntity());
+    public void savePost(@RequestBody PostSaveRequestDto dto) {
+        postRepository.save(dto.toEntity());
     }
 }

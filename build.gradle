@@ -44,6 +44,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile('mysql:mysql-connector-java')
     compile("com.h2database:h2")
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.webjars:jquery-ui:1.11.4')
 }
 
 dependencyManagement {

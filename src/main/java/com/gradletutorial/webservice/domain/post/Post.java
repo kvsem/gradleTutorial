@@ -1,4 +1,4 @@
-package com.gradletutorial.webservice.domain.posts;
+package com.gradletutorial.webservice.domain.post;
 
 import com.gradletutorial.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Post extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,10 +22,10 @@ public class Posts extends BaseTimeEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String context;
 
-    private String user_id;
+    private Integer user_id;
 
     @Builder
-    public Posts(String title, String context, String user_id) {
+    public Post(String title, String context, Integer user_id) {
         this.title = title;
         this.context = context;
         this.user_id = user_id;
