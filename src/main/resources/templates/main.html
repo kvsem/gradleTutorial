@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Hello Thymeleaf</title></head>
-<body><h1>Hello Thymeleaf</h1></body>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:each="post, itemStat : ${postList}">
+        <h1 th:text="${post.id + ' ' + post.title}"></h1>
+    </div>
+</body>
 </html>

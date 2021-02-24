@@ -3,23 +3,30 @@ package com.gradletutorial.webservice.web;
 import com.gradletutorial.webservice.domain.post.PostRepository;
 import com.gradletutorial.webservice.dto.PostSaveRequestDto;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
 public class WebRestController {
 
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
 
     @GetMapping("/hello")
     public String hello() {
         return "HelloWorld";
     }
 
-    @PostMapping("/posts")
+    @GetMapping("/post")
+    public Object getPost() {
+        return postRepository.findAll();
+    }
+
+    @GetMapping("/post/{postId}")
+    public Object getPost(@PathVariable Long postId) {
+        return postRepository.findById(postId);
+    }
+
+    @PostMapping("/post")
     public void savePost(@RequestBody PostSaveRequestDto dto) {
         postRepository.save(dto.toEntity());
     }
